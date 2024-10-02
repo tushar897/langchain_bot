@@ -22,7 +22,7 @@ st.subheader('File types supported: PDF/DOCX/TXT/JPG/PNG/YouTube :city_sunrise:'
 # File uploader in the sidebar on the left
 # with st.sidebar:
 #     # Input for OpenAI API Key
-#     openai_api_key = st.text_input("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", type="password")
+#     openai_api_key = st.text_input("", type="password")
 
 #     # Check if OpenAI API Key is provided
 #     if not openai_api_key:
