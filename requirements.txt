@@ -1,5 +1,6 @@
 pip==23.2.1
 langchain
+langchain_openai
 streamlit
 openai==0.28
 chromadb <= 0.3.29
