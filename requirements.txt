@@ -4,8 +4,8 @@ langchain_openai
 chromadb 
 langchain-chroma
 langchain-openai
-langchain_unstructured
-langchain_community
+langchain-unstructured
+langchain-community
 streamlit
 openai
 chromadb <= 0.3.29
