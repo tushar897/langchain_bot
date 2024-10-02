@@ -4,9 +4,9 @@ from langchain.vectorstores import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
-from langchain.document_loaders import UnstructuredFileLoader
-from langchain.document_loaders.image import UnstructuredImageLoader
-from langchain.document_loaders import ImageCaptionLoader
+from langchain_unstructured.document_loaders import UnstructuredLoader
+from langchain_community.document_loaders.image import UnstructuredImageLoader
+from langchain_community.document_loaders.image_captions import ImageCaptionLoader
 from langchain.docstore.document import Document
 import os
 import pytube
@@ -83,7 +83,7 @@ if uploaded_files or youtube_url:
                     
                 elif file_path.endswith((".pdf", ".docx", ".txt")):
                     # Use UnstructuredFileLoader to load the PDF/DOCX/TXT file
-                    loader = UnstructuredFileLoader(file_path)
+                    loader = UnstructuredLoader(file_path)
                     loaded_documents = loader.load()
 
                     # Extend the main documents list with the loaded documents
