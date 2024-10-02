@@ -8,7 +8,6 @@ langchain-unstructured
 langchain-community
 streamlit
 openai
-chromadb
 tiktoken
 pypdf
 unstructured[all-docs]
