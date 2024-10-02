@@ -1,6 +1,6 @@
 pip==23.2.1
 langchain
-langchain_openai
+langchain-openai
 chromadb 
 langchain-chroma
 langchain-openai
