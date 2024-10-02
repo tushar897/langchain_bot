@@ -12,30 +12,33 @@ import os
 import pytube
 import openai
 
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+
 # Chat UI title
+st.title('ChatGpt with LangChain')
 st.header("Upload your own file and ask questions like ChatGPT")
 st.subheader('File types supported: PDF/DOCX/TXT/JPG/PNG/YouTube :city_sunrise:')
 
 # File uploader in the sidebar on the left
-with st.sidebar:
-    # Input for OpenAI API Key
-    openai_api_key = st.text_input("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", type="password")
+# with st.sidebar:
+#     # Input for OpenAI API Key
+#     openai_api_key = st.text_input("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", type="password")
 
-    # Check if OpenAI API Key is provided
-    if not openai_api_key:
-        st.info("Please add your OpenAI API key to continue.")
-        st.stop()
+#     # Check if OpenAI API Key is provided
+#     if not openai_api_key:
+#         st.info("Please add your OpenAI API key to continue.")
+#         st.stop()
 
-    # Set OPENAI_API_KEY as an environment variable
-    os.environ["OPENAI_API_KEY"] = openai_api_key
+#     # Set OPENAI_API_KEY as an environment variable
+#     os.environ["OPENAI_API_KEY"] = openai_api_key
 
 # Initialize ChatOpenAI model
 llm = ChatOpenAI(temperature=0, max_tokens=16000, model_name="gpt-3.5-turbo-1106", streaming=True)
 
 # Load version history from the text file
-def load_version_history():
-    with open("version_history.txt", "r") as file:
-        return file.read()
+# def load_version_history():
+#     with open("version_history.txt", "r") as file:
+#         return file.read()
 
 # Sidebar section for uploading files and providing a YouTube URL
 with st.sidebar:
@@ -43,8 +46,8 @@ with st.sidebar:
     youtube_url = st.text_input("YouTube URL")
 
     # Create an expander for the version history in the sidebar
-    with st.sidebar.expander("**Version History**", expanded=False):
-        st.write(load_version_history())
+    # with st.sidebar.expander("**Version History**", expanded=False):
+    #     st.write(load_version_history())
 
     st.info("Please refresh the browser if you decide to upload more files to reset the session", icon="🚨")
 
