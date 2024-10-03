@@ -5,8 +5,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
 from langchain_unstructured import UnstructuredLoader
-from langchain_community.document_loaders.image import UnstructuredImageLoader
-from langchain_community.document_loaders.image_captions import ImageCaptionLoader
+from langchain_community.document_loaders import UnstructuredImageLoader
+from langchain_community.document_loaders import ImageCaptionLoader
 from langchain.docstore.document import Document
 import os
 import pytube
